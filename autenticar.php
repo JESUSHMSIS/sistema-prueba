@@ -20,13 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Redireccionamos al usuario a la página correspondiente según su nivel de acceso
         switch ($_SESSION['nivel']) {
             case 'administrador':
-                header('Location: ./pages/home_admin.php');
+                header('Location: ./pages/admin/home_admin.php');
                 break;
             case 'especialista psiquiátrico':
-                header('Location: ./pages/home_especialista.php');
+                header('Location: ./pages/especialista/home_especialista.php');
                 break;
             case 'paciente':
-                header('Location: ./pages/home_paciente.php');
+                header('Location: ./pages/paciente/home_paciente.php');
                 break;
             default:
                 echo 'Error: nivel de acceso no válido';

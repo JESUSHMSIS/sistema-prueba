@@ -1,7 +1,7 @@
 <?php
 $servidor = 'localhost';
 $usuario = 'root';
-$contrasena = 'sis10083746';
+$contrasena = '';
 $basedatos = 'prueba';
 
 $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);

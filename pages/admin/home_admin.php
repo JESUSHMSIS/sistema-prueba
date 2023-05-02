@@ -15,7 +15,7 @@ if ($_SESSION['nivel'] != 'administrador') {
 <body>
     <h1>Bienvenido, administrador</h1>
     <p>Esta es la página principal para los usuarios con nivel de acceso de administrador.</p>
-    <form method="post" action="../cerra_sesion.php">
+    <form method="post" action="../../cerra_sesion.php">
     <input type="submit" value="Cerrar sesión">
 </form>
 </body>

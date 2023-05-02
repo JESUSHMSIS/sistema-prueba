@@ -15,8 +15,12 @@ if ($_SESSION['nivel'] != 'paciente') {
 <body>
     <h1>Bienvenido, paciente</h1>
     <p>Esta es la página principal para los usuarios con nivel de acceso de paciente.</p>
-    <form method="post" action="../cerra_sesion.php">
+    <form method="post" action="../../cerra_sesion.php">
     <input type="submit" value="Cerrar sesión">
 </form>
+
+
+
+
 </body>
 </html>
