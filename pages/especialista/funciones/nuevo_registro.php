@@ -58,8 +58,12 @@
             transition: background-color 0.3s ease;
         }
         
-        .botonsito {
+        .botonsito:hover{
             background-color: #005DA8;
+        }
+        .botonsito a{
+            text-decoration:none;
+            color: white;
         }
     </style>
 </head>

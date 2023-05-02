@@ -47,7 +47,7 @@ select * from usuarios;
 SELECT * FROM pacientes;
 
 INSERT INTO pacientes (nombre, apellido, fecha_nacimiento, genero, direccion, telefono, correo)
-VALUES ('Paco', 'Pepe', '2000-01-01', 'M', 'Calle Mentira 123', '555-1234', 'Paco.perez@example.com');
+VALUES ('marco', 'joel', '2000-01-01', 'M', 'Calle Mentira 123', '555-1234', 'Marco.perez@example.com');
 
 
 INSERT INTO historial (id_paciente, id_usuario, fecha, diagnostico, tratamiento, medicamentos, notas_progreso) 
