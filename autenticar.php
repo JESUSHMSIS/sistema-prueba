@@ -1,7 +1,20 @@
 <?php
 require_once 'conexion.php';
 
+// Inicializamos la sesión
 session_start();
+
+// Comprobamos si el usuario está intentando acceder al sitio por primera vez
+if (!isset($_SESSION['intentos'])) {
+    $_SESSION['intentos'] = 0;
+    $_SESSION['ultimoIntento'] = time();
+}
+
+// Comprobamos si el usuario ha intentado acceder 3 veces en los últimos 30 segundos
+if ($_SESSION['intentos'] >= 3 && time() - $_SESSION['ultimoIntento'] < 30) {
+    echo 'Demasiados intentos fallidos, espere 30 segundos antes de intentarlo de nuevo.';
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
@@ -16,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Guardamos el nivel de acceso del usuario en la sesión
         $_SESSION['nivel'] = $fila['nivel'];
+
+        // Reiniciamos los intentos fallidos
+        $_SESSION['intentos'] = 0;
 
         // Redireccionamos al usuario a la página correspondiente según su nivel de acceso
         switch ($_SESSION['nivel']) {
@@ -32,6 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo 'Error: nivel de acceso no válido';
         }
     } else {
+        // Incrementamos el contador de intentos fallidos
+        $_SESSION['intentos']++;
+
+        // Actualizamos el último intento fallido
+        $_SESSION['ultimoIntento'] = time();
+
         echo 'Error: usuario o contraseña inválidos';
     }
 }
+?>

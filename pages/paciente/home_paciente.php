@@ -17,6 +17,9 @@ if ($_SESSION['nivel'] != 'paciente') {
     <p>Esta es la página principal para los usuarios con nivel de acceso de paciente.</p>
     <form method="post" action="../../cerra_sesion.php">
     <input type="submit" value="Cerrar sesión">
+    <?php if ($_SESSION['nivel'] == 'paciente') { ?>
+  <li><a href="./funciones/citas.php">Citas</a></li>
+<?php } ?>
 </form>
 
 

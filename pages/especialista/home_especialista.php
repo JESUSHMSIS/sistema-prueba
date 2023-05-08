@@ -70,6 +70,7 @@ a:hover {
     <form method="post" action="../../cerra_sesion.php">
     <input type="submit" value="Cerrar sesión">
     <a href="./funciones/historial_paciente.php">Pacientes</a>
+    <a href="./funciones/nueva_cita.php">agregar cita</a>
 </form>
 </body>
 </html>
